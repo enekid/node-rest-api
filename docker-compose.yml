@@ -8,12 +8,20 @@ api:
   ports:
     - "7000:3000"
   links:
-    - db
+    - mongodb
   environment:
     - API_PORT=3000
-db:
+    - MONGODB_USERNAME=mongo
+    - MONGODB_PASSWORD=mongo
+    - MONGODB_PORT=27017
+mongodb:
   image: mongo
   container_name: mongodb
-  ports:
-    - "27017:27017"
-  command: "--smallfiles --logpath=/dev/null"
+  expose:
+    - "27017" 
+  volumes:
+    - ./datadb:/data/db
+  environment:
+    - MONGODB_USERNAME=mongo
+    - MONGODB_PASSWORD=mongo
+  command: "--smallfiles --logpath=/data/db/logs"
