@@ -28,6 +28,19 @@ router.get('/', function(req, res) {
 });
 
 // Notes routes
+
+router.route('/notes/favorite')
+
+    // get the notes marked as favorite (accessed at GET http://domain:port/api/notes/favorite)
+    .get(function(req, res) {
+        Note.find({ favorite:true }, function(err, notes) {
+            if (err)
+                res.send(err);
+
+            res.json(notes);
+        });
+    }); 
+
 router.route('/notes')
 
     // create a note (accessed at POST http://domain:port/api/notes)
@@ -66,6 +79,23 @@ router.route('/notes/:note_id')
         });
     });
 
+router.route('/notes/:note_id/favorite')
+
+    // get the note with that id (accessed at POST http://domain:port/api/notes/:note_id/favorite)
+    .post(function(req, res) {
+        Note.findById(req.params.note_id, function(err, note) {
+            if (err)
+                res.send(err);
+            
+            note.favorite = true;
+            note.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Note marked as favorite!' });
+            });
+        });
+    });
 
 
 // REGISTER OUR ROUTES -------------------------------
