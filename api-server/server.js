@@ -35,7 +35,7 @@ router.route('/notes/favorite')
     .get(function(req, res) {
         Note.find({ favorite:true }, function(err, notes) {
             if (err)
-                res.send(err);
+                res.status(500).send(err);
 
             res.json(notes);
         });
@@ -51,7 +51,7 @@ router.route('/notes')
         // save the note and check for errors
         note.save(function(err) {
             if (err)
-                res.send(err);
+                res.status(500).send(err);
 
             res.json({ message: 'Note created!' });
         });
@@ -62,7 +62,7 @@ router.route('/notes')
     .get(function(req, res) {
         Note.find(function(err, notes) {
             if (err)
-                res.send(err);
+                res.status(500).send(err);
 
             res.json(notes);
         });
@@ -74,7 +74,7 @@ router.route('/notes/:note_id')
     .get(function(req, res) {
         Note.findById(req.params.note_id, function(err, note) {
             if (err)
-                res.send(err);
+                res.status(404).send('Not found');
             res.json(note);
         });
     });
@@ -85,12 +85,12 @@ router.route('/notes/:note_id/favorite')
     .post(function(req, res) {
         Note.findById(req.params.note_id, function(err, note) {
             if (err)
-                res.send(err);
+                res.status(404).send('Not found');
             
             note.favorite = true;
             note.save(function(err) {
                 if (err)
-                    res.send(err);
+                    res.status(500).send(err);
 
                 res.json({ message: 'Note marked as favorite!' });
             });
