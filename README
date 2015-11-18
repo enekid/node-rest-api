@@ -3,3 +3,10 @@ README
 docker run -it -v /Users/eneko/workspace/tests/docker/server-api:/server-api node:0.12 /bin/bash
 
 docker-compose up
+
+npm install
+
+
+192.168.99.100 rest-api.dev
+
+rest-api.dev:7000/api
