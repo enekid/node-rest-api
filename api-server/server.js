@@ -27,6 +27,34 @@ router.get('/', function(req, res) {
     res.json({ message: 'Api server up&running' });   
 });
 
+// Notes routes
+router.route('/notes')
+
+    // create a note (accessed at POST http://localhost:8080/api/notes)
+    .post(function(req, res) {
+        var note = new Note();      // create a new instance of the note model
+        note.text = req.body.text;  // set the notes name (comes from the request)
+
+        // save the note and check for errors
+        note.save(function(err) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Note created!' });
+        });
+        
+    })
+    
+    // get all the notes (accessed at GET http://localhost:8080/api/notes)
+    .get(function(req, res) {
+        Note.find(function(err, notes) {
+            if (err)
+                res.send(err);
+
+            res.json(notes);
+        });
+    });
+
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
