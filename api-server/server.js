@@ -30,7 +30,7 @@ router.get('/', function(req, res) {
 // Notes routes
 router.route('/notes')
 
-    // create a note (accessed at POST http://localhost:8080/api/notes)
+    // create a note (accessed at POST http://domain:port/api/notes)
     .post(function(req, res) {
         var note = new Note();      // create a new instance of the note model
         note.text = req.body.text;  // set the notes name (comes from the request)
@@ -45,7 +45,7 @@ router.route('/notes')
         
     })
     
-    // get all the notes (accessed at GET http://localhost:8080/api/notes)
+    // get all the notes (accessed at GET http://domain:port/api/notes)
     .get(function(req, res) {
         Note.find(function(err, notes) {
             if (err)
@@ -54,6 +54,18 @@ router.route('/notes')
             res.json(notes);
         });
     });
+
+router.route('/notes/:note_id')
+
+    // get the note with that id (accessed at GET http://domain:port/api/notes/:note_id)
+    .get(function(req, res) {
+        Note.findById(req.params.note_id, function(err, note) {
+            if (err)
+                res.send(err);
+            res.json(note);
+        });
+    });
+
 
 
 // REGISTER OUR ROUTES -------------------------------
