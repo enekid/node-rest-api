@@ -1,0 +1,144 @@
+{
+	"id": "dacdd732-a4f3-2113-fb31-cdc9fe326852",
+	"name": "Kubide",
+	"description": "",
+	"order": [
+		"8bf241c8-8bcd-e604-6a7e-8be03d91b1f1",
+		"bf3c5066-f5f8-1162-08b7-1330979e4a37",
+		"f543c904-8ae6-a332-daac-bcac6e24ec3f",
+		"497c5c17-5a34-b361-f7e7-318a5069a499",
+		"d327d601-9840-abeb-7b7e-ecadcafbc818"
+	],
+	"folders": [],
+	"timestamp": 1447873625541,
+	"owner": "",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "497c5c17-5a34-b361-f7e7-318a5069a499",
+			"headers": "",
+			"url": "http://rest-api.dev:7000/api/notes/564cd382ba8f3d0e00000001/favorite",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447875489883,
+			"name": "POST favorite",
+			"description": "",
+			"collectionId": "dacdd732-a4f3-2113-fb31-cdc9fe326852",
+			"responses": []
+		},
+		{
+			"id": "8bf241c8-8bcd-e604-6a7e-8be03d91b1f1",
+			"headers": "",
+			"url": "http://rest-api.dev:7000/api/notes/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "text",
+					"value": "Hi Ana",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447873916946,
+			"name": "POST note",
+			"description": "",
+			"collectionId": "dacdd732-a4f3-2113-fb31-cdc9fe326852",
+			"responses": []
+		},
+		{
+			"id": "bf3c5066-f5f8-1162-08b7-1330979e4a37",
+			"headers": "",
+			"url": "http://rest-api.dev:7000/api/notes",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "dacdd732-a4f3-2113-fb31-cdc9fe326852",
+			"data": [
+				{
+					"key": "text",
+					"value": "Hi you",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "GET notes",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1447873834340,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "d327d601-9840-abeb-7b7e-ecadcafbc818",
+			"headers": "",
+			"url": "http://rest-api.dev:7000/api/notes/favorite",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "dacdd732-a4f3-2113-fb31-cdc9fe326852",
+			"data": [
+				{
+					"key": "text",
+					"value": "Hi you",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "GET favorite",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1447874539856,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f543c904-8ae6-a332-daac-bcac6e24ec3f",
+			"headers": "",
+			"url": "http://rest-api.dev:7000/api/notes/564cd382ba8f3d0e00000001",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "text",
+					"value": "Hi you",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447875484033,
+			"name": "GET note",
+			"description": "",
+			"collectionId": "dacdd732-a4f3-2113-fb31-cdc9fe326852",
+			"responses": []
+		}
+	]
+}
