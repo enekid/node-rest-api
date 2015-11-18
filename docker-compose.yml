@@ -21,7 +21,4 @@ mongodb:
     - "27017" 
   volumes:
     - ./datadb:/data/db
-  environment:
-    - MONGODB_USERNAME=mongo
-    - MONGODB_PASSWORD=mongo
   command: "--smallfiles --logpath=/data/db/logs"
