@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "Kubide application",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node_modules/.bin/mocha -w"
   },
   "dependencies": {
     "express": "~4.0.0",
     "mongoose": "~3.6.13",
     "body-parser": "~1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "should": "^7.0.2",
+    "supertest": "^1.0.1"
   },
   "author": "Eneko Lakasta"
 }

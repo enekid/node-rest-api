@@ -53,7 +53,7 @@ router.route('/notes')
             if (err)
                 res.status(500).send(err);
 
-            res.json({ message: 'Note created!' });
+            res.json({ message: 'Note created' });
         });
         
     })
