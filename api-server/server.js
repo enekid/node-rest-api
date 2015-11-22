@@ -81,7 +81,7 @@ router.route('/notes/:note_id')
 
 router.route('/notes/:note_id/favorite')
 
-    // get the note with that id (accessed at POST http://domain:port/api/notes/:note_id/favorite)
+    // mark a note as favorite (accessed at POST http://domain:port/api/notes/:note_id/favorite)
     .post(function(req, res) {
         Note.findById(req.params.note_id, function(err, note) {
             if (err)
